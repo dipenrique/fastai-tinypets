@@ -46,8 +46,8 @@ layout: page
     // const json = await response.json();
 
    exampleImage = reader.result;
-   const client = await window.GradioClient.connect("Analyzer/fastai-pet");
-   const json = await client.predict("/predict", { 
+   const newclient = await window.GradioClient.connect("Analyzer/fastai-pet");
+   const json = await newclient.predict("/predict", { 
    				img: exampleImage, 
    });
 
