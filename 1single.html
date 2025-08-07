@@ -46,14 +46,14 @@ layout: page
     // const json = await response.json();
          // const label = json['data'][0]['confidences'][0]['label'];
 
-   exampleImage = reader.result;
    const newclient = await window.GradioClient.connect("Analyzer/fastai-pet");
    const json = await newclient.predict("/predict", { 
    				img: photo.files[0], 
    });
+   console.log(json)
 
     const label = json.data;
-    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`;
+    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${json}</p>`;
 
     
   }
