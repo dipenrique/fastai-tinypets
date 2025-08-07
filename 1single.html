@@ -13,7 +13,7 @@ layout: page
         text: "My name is Hannah"
     });
     console.log(result);
-
+   export { Client }; // Exporting a class
 </script>
 
 <script>
@@ -39,6 +39,12 @@ layout: page
 
     const label = json['data'][0]['confidences'][0]['label'];
     results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`;
+
+     const client = await Client.connect("abidlabs/en2fr");
+    const result = await client.predict("/predict", {
+        text: "My name is Hannah"
+    });
+    console.log(result);
     
   }
   function read() {
