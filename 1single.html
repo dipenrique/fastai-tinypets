@@ -13,13 +13,15 @@ layout: page
         text: "My name is Hannah"
     });
     console.log(result);
-   export { Client }; // Exporting a class
+
+   window.GradioClient = Client
+   // export { Client }; // Exporting a class
 </script>
 
 <script>
   async function loaded(reader) {
 
-          const client = await Client.connect("abidlabs/en2fr");
+    const client = await window.GradioClient.connect("abidlabs/en2fr");
     const result = await client.predict("/predict", {
         text: "My name is Hannah"
     });
