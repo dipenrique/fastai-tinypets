@@ -13,7 +13,7 @@ layout: page
     });
     const eventjson = await eventresponse.json();
 
-    const response = await fetch('https://analyzer-fastai-pet.hf.space/gradio_api/call/predict'+eventjson.event_id, {
+    const response = await fetch('https://analyzer-fastai-pet.hf.space/gradio_api/call/predict/'+eventjson.event_id, {
       method: "GET",
       headers: { "Content-Type": "application/json" }
     });
